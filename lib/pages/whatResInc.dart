@@ -30,7 +30,7 @@ class Responsive_Com_Serv extends StatelessWidget {
             const Text(
               '''What's Included''',
               style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 34,
                   color: WebColors.bgcolor1,
                   fontWeight: FontWeight.bold),
             ),
@@ -39,9 +39,13 @@ class Responsive_Com_Serv extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(left: 50, right: 50),
                 child: Text(
-                  'When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts. When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts.',
-                  style: TextStyle(color: Colors.black, fontSize: 15),
-                  textAlign: TextAlign.justify,
+                  'In our organization, We are also includes in mobile, desktop, website application like Manage Business,  Global Payment, Comprehensive Security, Predictable Payout, Collaboration Notes and Developer Dashboard.',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    letterSpacing: 1.0,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -53,49 +57,43 @@ class Responsive_Com_Serv extends StatelessWidget {
                 color: Colors.white,
                 icon: Icons.precision_manufacturing_outlined,
                 title: "Manage Business",
-                subtitle1: "subtitle1",
-                subtitle2: "subtitle2",
-                subtitle3: "subtitle3",
+                subtitle:
+                    "    90% of new startups fail? Unfortunately, due to the lack of professional business management. We are providing Business management system for your organisation to grow up fastly.",
               ),
               BuildSingleItem(
                 color: Colors.white,
                 icon: Icons.wallet,
                 title: "Global Payments",
-                subtitle1: "subtitle1",
-                subtitle2: "subtitle2",
-                subtitle3: "subtitle3",
+                subtitle:
+                    "    Payment Companies, Merchant Acounts, and Consumers are all shifting to digital, which is giving gateways more influence. Due to which our organization also provides payment gateway service on Mobile, Website and System Application.",
               ),
               BuildSingleItem(
                 color: Colors.white,
                 icon: Icons.security_outlined,
                 title: "Comprehensive Security",
-                subtitle1: "subtitle1",
-                subtitle2: "subtitle2",
-                subtitle3: "subtitle3",
+                subtitle:
+                    "    In today's world our website should have comprehensive security, provide the security is very costly. But our company provides a massive and comprehensive security for your web, app and system software at a very affordable cost.",
               ),
               BuildSingleItem(
                 color: Colors.white,
                 icon: Icons.paypal_outlined,
                 title: "Predictable Payout",
-                subtitle1: "subtitle1",
-                subtitle2: "subtitle2",
-                subtitle3: "subtitle3",
+                subtitle:
+                    "    Many companies use payout system to pay their employees with the help payout management system, which is made available by our company to the customer, in the form of website, mobile and system software.",
               ),
               BuildSingleItem(
                 color: Colors.white,
                 icon: Icons.note_add_rounded,
-                title: "Collabration Notes",
-                subtitle1: "subtitle1",
-                subtitle2: "subtitle2",
-                subtitle3: "subtitle3",
+                title: "Collaboration Notes",
+                subtitle:
+                    "    To getting the height of success in your field needs collaboration. So we will also providing service of collaboration note for your company growth. I hope this will win-win situation both of us.",
               ),
               BuildSingleItem(
                 color: Colors.white,
                 icon: Icons.dashboard,
                 title: "Developer Dashboard",
-                subtitle1: "subtitle1",
-                subtitle2: "subtitle2",
-                subtitle3: "subtitle3",
+                subtitle:
+                    "    Dashboard is the section where you get all the details about your activities. You can easily track and manage product and services that you avail. So We will provide different type of dashboard for your Organization/Company.",
               ),
             ]),
             const SizedBox(height: 50),

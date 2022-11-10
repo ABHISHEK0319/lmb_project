@@ -4,15 +4,13 @@ import 'package:lmb_project/CustomUi/custom_color.dart';
 class BuildSingleItem extends StatelessWidget {
   final Color color;
   final IconData icon;
-  final String title, subtitle1, subtitle2, subtitle3;
+  final String title, subtitle;
   const BuildSingleItem({
     super.key,
     required this.color,
     required this.icon,
     required this.title,
-    required this.subtitle1,
-    required this.subtitle2,
-    required this.subtitle3,
+    required this.subtitle,
   });
 
   @override
@@ -56,24 +54,10 @@ class BuildSingleItem extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
-                    child: Column(
-                      children: [
-                        Text(
-                          subtitle1,
-                          style: const TextStyle(
-                              color: Colors.black, fontSize: 12),
-                        ),
-                        Text(
-                          subtitle2,
-                          style: const TextStyle(
-                              color: Colors.black, fontSize: 12),
-                        ),
-                        Text(
-                          subtitle3,
-                          style: const TextStyle(
-                              color: Colors.black, fontSize: 12),
-                        ),
-                      ],
+                    child: Text(
+                      subtitle,
+                      style: const TextStyle(color: Colors.black, fontSize: 12),
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ),

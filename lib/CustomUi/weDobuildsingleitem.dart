@@ -25,7 +25,7 @@ class WeDoBuildSingleItem extends StatelessWidget {
             height: 220,
             width: 250,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.7),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
@@ -51,7 +51,7 @@ class WeDoBuildSingleItem extends StatelessWidget {
                         Text(
                           subtitle,
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 12,
                           ),
                           maxLines: 8,
