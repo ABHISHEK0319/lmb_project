@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/responsive.dart';
 import 'package:lmb_project/pages/contact_us.dart';
 import 'package:lmb_project/pages/home.dart';
@@ -67,17 +68,30 @@ class Header extends StatelessWidget {
                     );
                   },
                 ),
-                NavItem(
-                  title: 'Login',
-                  tapEvent: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
-                      ),
-                      ModalRoute.withName("/"),
-                    );
-                  },
+                Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(208, 219, 255, 59),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: const [
+                        BoxShadow(
+                          blurRadius: 10,
+                          spreadRadius: 3,
+                          color: WebColors.bgcolor2,
+                        ),
+                      ]),
+                  child: NavItem(
+                    title: 'Login',
+                    tapEvent: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                        ModalRoute.withName("/"),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),

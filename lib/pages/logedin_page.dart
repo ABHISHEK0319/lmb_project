@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:lmb_project/CustomUi/header.dart';
+import 'package:lmb_project/CustomUi/main_button.dart';
+import 'package:lmb_project/pages/userdashboad.dart';
 
 class LogedinPage extends StatefulWidget {
   const LogedinPage({Key? key}) : super(key: key);
@@ -42,13 +44,17 @@ class _LogedinPageState extends State<LogedinPage> {
                     icon: Icon(Icons.question_answer),
                     text: "FAQ",
                   ),
+                  Tab(
+                    icon: Icon(Icons.logout),
+                    text: "LOGOUT",
+                  ),
                 ]),
             Expanded(
               child: TabBarView(children: [
                 Container(
                   color: const Color.fromARGB(119, 255, 172, 64),
                   child: const Center(
-                    child: Text("Dashboard"),
+                    child: UserDashboard(),
                   ),
                 ),
                 Container(
@@ -61,6 +67,18 @@ class _LogedinPageState extends State<LogedinPage> {
                   color: const Color.fromARGB(90, 223, 64, 251),
                   child: const Center(
                     child: Text("Frequently asked question"),
+                  ),
+                ),
+                Container(
+                  color: const Color.fromARGB(128, 255, 82, 82),
+                  child: Center(
+                    child: MainButton(
+                      title: "LogOut",
+                      tapEvent: () {
+                        print("Logout the user");
+                      },
+                      color: Colors.red,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 200),
