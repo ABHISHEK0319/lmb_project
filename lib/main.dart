@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/pages/home.dart';
-import 'package:lmb_project/pages/logedin_page.dart';
+import 'package:lmb_project/pages/tab_logedin_page.dart';
+import 'package:lmb_project/pages/sampleLogedin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: WebColors.bgcolor1,
         ),
-        home: const LogedinPage());
+        home: const SampleLogedinPage());
   }
 }
 
@@ -32,6 +33,5 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return const HomeScreen();
-    // return const Name();
   }
 }

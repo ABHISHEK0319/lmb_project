@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:lmb_project/CustomUi/header.dart';
-import 'package:lmb_project/pages/logedin_page.dart';
+import 'package:lmb_project/pages/tab_logedin_page.dart';
 import 'package:lmb_project/pages/registration_page.dart';
 
 import '../CustomUi/main_button.dart';
 import '../CustomUi/responsive.dart';
+import 'sampleLogedin.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -126,7 +127,7 @@ class ResponsiveLoginPage extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              const LogedinPage(),
+                                              const SampleLogedinPage(),
                                         ),
                                         (route) => true);
                                   },
