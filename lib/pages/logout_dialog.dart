@@ -5,7 +5,7 @@ import 'package:lmb_project/pages/home.dart';
 
 import '../CustomUi/main_button.dart';
 import 'tab_logedin_page.dart';
-import 'sampleLogedin.dart';
+import 'Logedin.dart';
 
 class LogoutDialog extends StatefulWidget {
   const LogoutDialog({super.key});

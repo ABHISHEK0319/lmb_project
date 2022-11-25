@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CustomSolnBuildSingleItem extends StatelessWidget {
   final Color color;
@@ -32,20 +33,28 @@ class CustomSolnBuildSingleItem extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 15),
-                Container(
-                  child: Icon(
-                    icon,
-                    size: 50,
-                    color: WebColors.bgcolor1,
+                Shimmer.fromColors(
+                  baseColor: WebColors.bgcolor1,
+                  highlightColor: Colors.black,
+                  child: Container(
+                    child: Icon(
+                      icon,
+                      size: 50,
+                      color: WebColors.bgcolor1,
+                    ),
                   ),
                 ),
                 Container(
-                  child: Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: WebColors.bgcolor1,
-                      fontWeight: FontWeight.bold,
+                  child: Shimmer.fromColors(
+                    baseColor: WebColors.bgcolor1,
+                    highlightColor: Colors.black,
+                    child: Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: WebColors.bgcolor1,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

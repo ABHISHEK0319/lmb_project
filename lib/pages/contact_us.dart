@@ -25,6 +25,7 @@ class _ContactUsState extends State<ContactUs> {
             colors: [
               WebColors.bgcolor1,
               Colors.white,
+              WebColors.bgcolor2,
             ],
           )),
           child: Column(

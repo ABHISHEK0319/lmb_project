@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons_null_safety/flutter_icons_null_safety.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/customsolnbuildsingleitem.dart';
 import 'package:lmb_project/CustomUi/responsive.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CustomSolnNew extends StatelessWidget {
   const CustomSolnNew({Key? key}) : super(key: key);
@@ -35,13 +37,17 @@ class Responsive_Com_Serv extends StatelessWidget {
                     SizedBox(child: Image.asset("assets/images/teamwork.png")),
               ),
             ),
-            const Text(
-              '''Custom Software Solution''',
-              style: TextStyle(
-                  fontSize: 34,
-                  color: WebColors.bgcolor1,
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+            Shimmer.fromColors(
+              baseColor: WebColors.bgcolor1,
+              highlightColor: Colors.black,
+              child: const Text(
+                '''Custom Software Solution''',
+                style: TextStyle(
+                    fontSize: 34,
+                    color: WebColors.bgcolor1,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(height: 20),
             const Center(
@@ -72,13 +78,13 @@ class Responsive_Com_Serv extends StatelessWidget {
                 ),
                 CustomSolnBuildSingleItem(
                   color: WebColors.bgcolor2,
-                  icon: Icons.location_on,
+                  icon: Icons.call,
                   title: "Phone Number",
                   subtitle: "222-364-5368",
                 ),
                 CustomSolnBuildSingleItem(
                   color: WebColors.bgcolor2,
-                  icon: Icons.location_on,
+                  icon: Icons.email,
                   title: "Email",
                   subtitle: "xyz.123@gmail.com",
                 ),

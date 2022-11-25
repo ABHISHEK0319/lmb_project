@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/responsive.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CompanyServices extends StatelessWidget {
   const CompanyServices({Key? key}) : super(key: key);
@@ -26,12 +27,16 @@ class Responsive_Com_Serv extends StatelessWidget {
             child: Column(
           children: [
             const SizedBox(height: 30),
-            const Text(
-              'Company Services',
-              style: TextStyle(
-                  fontSize: 34,
-                  color: WebColors.bgcolor1,
-                  fontWeight: FontWeight.bold),
+            Shimmer.fromColors(
+              baseColor: WebColors.bgcolor1,
+              highlightColor: Colors.black,
+              child: const Text(
+                'Company Services',
+                style: TextStyle(
+                    fontSize: 34,
+                    //color: WebColors.bgcolor1,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             const SizedBox(height: 30),
             const Center(

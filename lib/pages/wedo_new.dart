@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/responsive.dart';
 import 'package:lmb_project/CustomUi/weDobuildsingleitem.dart';
+import 'package:shimmer/shimmer.dart';
 
 class WhatWeDoNew extends StatelessWidget {
   const WhatWeDoNew({Key? key}) : super(key: key);
@@ -29,12 +30,16 @@ class Responsive_Com_Serv extends StatelessWidget {
           children: [
             const SizedBox(height: 30),
 
-            const Text(
-              '''What we do''',
-              style: TextStyle(
-                  fontSize: 30,
-                  color: WebColors.bgcolor1,
-                  fontWeight: FontWeight.bold),
+            Shimmer.fromColors(
+              baseColor: WebColors.bgcolor1,
+              highlightColor: Colors.black,
+              child: const Text(
+                '''What we do''',
+                style: TextStyle(
+                    fontSize: 30,
+                    color: WebColors.bgcolor1,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             const SizedBox(height: 30),
             const Center(

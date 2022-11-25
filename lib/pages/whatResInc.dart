@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/buildsingleitem.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/responsive.dart';
+import 'package:shimmer/shimmer.dart';
 
 class WhatIncludedNew extends StatelessWidget {
   const WhatIncludedNew({Key? key}) : super(key: key);
@@ -27,12 +28,16 @@ class Responsive_Com_Serv extends StatelessWidget {
             child: Column(
           children: [
             const SizedBox(height: 30),
-            const Text(
-              '''What's Included''',
-              style: TextStyle(
-                  fontSize: 34,
-                  color: WebColors.bgcolor1,
-                  fontWeight: FontWeight.bold),
+            Shimmer.fromColors(
+              baseColor: WebColors.bgcolor1,
+              highlightColor: Colors.lime,
+              child: const Text(
+                '''What's Included''',
+                style: TextStyle(
+                    fontSize: 34,
+                    color: WebColors.bgcolor1,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             const SizedBox(height: 30),
             const Center(

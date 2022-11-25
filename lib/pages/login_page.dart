@@ -7,7 +7,7 @@ import 'package:lmb_project/pages/registration_page.dart';
 
 import '../CustomUi/main_button.dart';
 import '../CustomUi/responsive.dart';
-import 'sampleLogedin.dart';
+import 'Logedin.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);

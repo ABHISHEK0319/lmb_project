@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/footer.dart';
+import 'package:lmb_project/pages/faq.dart';
 import 'package:lmb_project/pages/logout_dialog.dart';
+import 'package:lmb_project/pages/mycartbody.dart';
+import 'package:lmb_project/pages/order.dart';
 import 'package:lmb_project/pages/samplyDashboard.dart';
 
 class TabsLogedinPage extends StatefulWidget {
@@ -15,16 +18,16 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            //     gradient: LinearGradient(
-            //   begin: Alignment.topLeft,
-            //   end: Alignment.topRight,
-            //   colors: [WebColors.bgcolor1, Colors.white],
-            // ),
-            color: WebColors.bgcolor1,
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.topRight,
+              colors: [WebColors.bgcolor1, Colors.white],
+            ),
+            //: WebColors.bgcolor1,
           ),
           child: Column(children: [
             // const Header(),
@@ -46,6 +49,10 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
                     // text: "FAQ",
                   ),
                   Tab(
+                    icon: Icon(Icons.shopping_cart_checkout_outlined),
+                    // text: "FAQ",
+                  ),
+                  Tab(
                     icon: Icon(Icons.logout),
                     //text: "LOGOUT",
                   ),
@@ -64,10 +71,10 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
                         height: MediaQuery.of(context).size.height,
                         color: const Color.fromARGB(128, 255, 82, 82),
                         child: const Center(
-                          child: Text("Order"),
+                          child: MyOrderResponsive(),
                         ),
                       ),
-                      const Footer(),
+                      //const Footer(),
                     ],
                   ),
                 ),
@@ -78,13 +85,14 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
                         height: MediaQuery.of(context).size.height,
                         color: const Color.fromARGB(90, 223, 64, 251),
                         child: const Center(
-                          child: Text("Frequently asked question"),
+                          child: Faq(),
                         ),
                       ),
-                      const Footer(),
+                      // const Footer(),
                     ],
                   ),
                 ),
+                const MyCartBody(),
                 const LogoutDialog(),
                 //const SizedBox(height: 200),
               ]),
