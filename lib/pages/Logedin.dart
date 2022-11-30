@@ -3,14 +3,14 @@ import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/header.dart';
 import 'package:lmb_project/pages/tab_logedin_page.dart';
 
-class SampleLogedinPage extends StatefulWidget {
-  const SampleLogedinPage({Key? key}) : super(key: key);
+class LogedinPage extends StatefulWidget {
+  const LogedinPage({Key? key}) : super(key: key);
 
   @override
-  State<SampleLogedinPage> createState() => _SampleLogedinPageState();
+  State<LogedinPage> createState() => _LogedinPageState();
 }
 
-class _SampleLogedinPageState extends State<SampleLogedinPage> {
+class _LogedinPageState extends State<LogedinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

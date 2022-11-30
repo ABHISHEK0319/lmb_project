@@ -19,6 +19,8 @@ class FaqCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
       child: Card(
+        color: Colors.white70,
+        shadowColor: WebColors.bgcolor2,
         elevation: 10,
         child: ExpansionTile(
           textColor: WebColors.bgcolor1,

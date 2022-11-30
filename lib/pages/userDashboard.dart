@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class SampleUserDashboard extends StatelessWidget {
-  const SampleUserDashboard({super.key});
+class UserDashboard extends StatelessWidget {
+  const UserDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Widget container2 =
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -89,7 +87,6 @@ class _MyVxDashboardState extends State<MyVxDashboard> {
                 .rounded
                 .alignCenter
                 .color(Vx.randomOpaqueColor)
-                //.bgImage(Ima)
                 .make()
                 .p32()).swiper(
             height: context.isMobile ? 300 : 600,

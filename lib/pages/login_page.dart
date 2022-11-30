@@ -127,7 +127,7 @@ class ResponsiveLoginPage extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              const SampleLogedinPage(),
+                                              const LogedinPage(),
                                         ),
                                         (route) => true);
                                   },

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html><html>
+<meta name="viewport" content="width=device-width">
+<head><title>Lmb Technologies Payment Gateway</title></head>
+<style>
+    body {
+    background-color: lightgreen;
+    }
+    </style> 
+<body>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+        var options = {
+            "key": "rzp_test_QaGtZE4plVbLcG",
+            "amount": "50000", "currency": "INR",
+            "name": "Lmb Technologies",
+            "description": "Test Transaction",
+            //"image": "assets/images/payment_done.png",
+            "handler": function (response){
+            window.parent.postMessage("SUCCESS","*");      //2 
+            alert(response.razorpay_payment_id);
+            //alert(response.razorpay_order_id);
+            //alert(response.razorpay_signature)  
+            },
+            
+        "prefill": {        
+            "name": "Nitesh Kumar",        
+            "email": "niteshkumar@morningstar.org",
+            "contact": "9999999999"   
+        },   
+        "notes": {        
+            "address": "Autofy"    
+        },    
+        "theme": {
+            "color": "#33FFAF"    
+        },
+        "modal": {
+            "ondismiss": function(){
+               window.parent.postMessage("MODAL_CLOSED","*");   //3
+            }
+          }
+       };
+
+        var rzp1 = new Razorpay(options);
+        window.onload = function(e){  //1  
+        rzp1.open();
+        e.preventDefault();
+       }
+
+</script>
+</body>
+</html>

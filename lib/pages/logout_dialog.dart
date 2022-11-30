@@ -61,7 +61,7 @@ class _LogoutDialogState extends State<LogoutDialog> {
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const SampleLogedinPage(),
+                                builder: (context) => const LogedinPage(),
                               ),
                               (route) => true);
                         },

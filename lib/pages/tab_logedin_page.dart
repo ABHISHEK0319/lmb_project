@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
-import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:lmb_project/pages/faq.dart';
 import 'package:lmb_project/pages/logout_dialog.dart';
 import 'package:lmb_project/pages/mycartbody.dart';
 import 'package:lmb_project/pages/order.dart';
-import 'package:lmb_project/pages/samplyDashboard.dart';
+import 'package:lmb_project/pages/userDashboard.dart';
 
 class TabsLogedinPage extends StatefulWidget {
   const TabsLogedinPage({Key? key}) : super(key: key);
@@ -27,10 +26,8 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
               end: Alignment.topRight,
               colors: [WebColors.bgcolor1, Colors.white],
             ),
-            //: WebColors.bgcolor1,
           ),
           child: Column(children: [
-            // const Header(),
             const TabBar(
                 labelColor: Colors.black,
                 labelStyle: TextStyle(fontWeight: FontWeight.w200),
@@ -61,20 +58,17 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
               child: TabBarView(children: [
                 Container(
                   height: MediaQuery.of(context).size.height,
-                  color: const Color.fromARGB(119, 255, 172, 64),
-                  child: const SampleUserDashboard(),
+                  child: const UserDashboard(),
                 ),
                 SingleChildScrollView(
                   child: Column(
                     children: [
                       Container(
                         height: MediaQuery.of(context).size.height,
-                        color: const Color.fromARGB(128, 255, 82, 82),
                         child: const Center(
                           child: MyOrderResponsive(),
                         ),
                       ),
-                      //const Footer(),
                     ],
                   ),
                 ),
@@ -83,18 +77,16 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
                     children: [
                       Container(
                         height: MediaQuery.of(context).size.height,
-                        color: const Color.fromARGB(90, 223, 64, 251),
+                        color: Colors.white,
                         child: const Center(
                           child: Faq(),
                         ),
                       ),
-                      // const Footer(),
                     ],
                   ),
                 ),
                 const MyCartBody(),
                 const LogoutDialog(),
-                //const SizedBox(height: 200),
               ]),
             ),
           ]),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/mycart.dart';
 import 'package:lmb_project/CustomUi/fancyButton.dart';
+import 'package:lmb_project/utils/payment_gateway.dart';
 
 class MyCartBody extends StatelessWidget {
   const MyCartBody({super.key});
@@ -52,7 +53,14 @@ class MyCartBody extends StatelessWidget {
         child: IconTheme(
           data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
           child: FancyButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PaymentGateway(),
+                ),
+              );
+            },
           ),
         ),
       ),

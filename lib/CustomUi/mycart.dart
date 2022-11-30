@@ -16,7 +16,7 @@ class _ResponsiveCartViewState extends State<ResponsiveCartView> {
   Widget build(BuildContext context) {
     return const VxDevice(
       mobile: MyCartMobile(),
-      web: MyCartWeb(),
+      web: MyCartWebsite(),
     );
   }
 }
@@ -33,94 +33,99 @@ class MyCartMobile extends StatelessWidget {
         itemCount: 15,
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 430.0,
-          crossAxisSpacing: 20.0,
-          mainAxisSpacing: 20.0,
+          crossAxisSpacing: 0.0,
+          mainAxisSpacing: 25.0,
           childAspectRatio: 1,
           mainAxisExtent: 300,
         ),
-        itemBuilder: (context, i) => Card(
-          color: WebColors.bgcolor2,
-          child: Column(
-            children: [
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Text(
-                      //cartModel[i].shopName,
-                      "Shop Name",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: const [
-                  Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 30, top: 20, bottom: 30),
+        itemBuilder: (context, i) => Padding(
+          padding: const EdgeInsets.only(right: 10.0, left: 10.0),
+          child: Card(
+            color: WebColors.bgcolor2,
+            //color: Colors.white70,
+            shadowColor: WebColors.bgcolor2,
+            child: Column(
+              children: [
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.all(20.0),
                       child: Text(
-                        // cartModel[i].productName,
-                        "Product Name",
+                        //cartModel[i].shopName,
+                        "Shop Name",
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20),
-                    child: SizedBox(
-                      height: 45,
-                      child: Card(
-                        child: DropdownButtonMonths(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 25.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: MaterialButton(
-                        minWidth: 120,
-                        height: 35,
-                        textColor: Colors.white,
-                        color: WebColors.bgcolor1,
-                        splashColor: Colors.amberAccent,
-                        hoverColor: Colors.green,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(50.0),
+                  ],
+                ),
+                Row(
+                  children: const [
+                    Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 30, top: 20, bottom: 30),
+                        child: Text(
+                          // cartModel[i].productName,
+                          "Product Name",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        onPressed: () {},
-                        child: const Text(
-                          "PAYMENT",
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: SizedBox(
+                        height: 45,
+                        child: Card(
+                          child: DropdownButtonMonths(),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+                const SizedBox(
+                  height: 25.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: MaterialButton(
+                          minWidth: 120,
+                          height: 35,
+                          textColor: Colors.white,
+                          color: WebColors.bgcolor1,
+                          splashColor: Colors.amberAccent,
+                          hoverColor: Colors.green,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(50.0),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            "PAYMENT",
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -144,7 +149,10 @@ class MyCartWeb extends StatelessWidget {
           mainAxisExtent: 300,
         ),
         itemBuilder: (context, i) => Card(
-          color: WebColors.bgcolor2,
+          //color: WebColors.bgcolor2,
+          color: Colors.white70,
+          shadowColor: WebColors.bgcolor2,
+
           child: Column(
             children: [
               const SizedBox(height: 10),
@@ -216,7 +224,14 @@ class MyCartWeb extends StatelessWidget {
                             Radius.circular(50.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => Webpayment(),
+                          //   ),
+                          // );
+                        },
                         child: const Text(
                           "PAYMENT",
                         ),
@@ -253,36 +268,133 @@ class _DropdownButtonMonthsState extends State<DropdownButtonMonths> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: DropdownButton<String>(
-        value: dropdownValue,
-        icon: const Padding(
-          padding: EdgeInsets.only(left: 10),
-          child: Icon(
-            Icons.arrow_downward,
-            color: Colors.black,
+    return DropdownButton<String>(
+      dropdownColor: Colors.white,
+      value: dropdownValue,
+      icon: const Padding(
+        padding: EdgeInsets.only(left: 5),
+        child: Icon(
+          Icons.arrow_downward,
+          color: Colors.black,
+        ),
+      ),
+
+      //elevation: 16,
+      style: const TextStyle(color: WebColors.bgcolor1, fontSize: 15),
+      underline: Container(
+        height: null,
+        //color: WebColors.bgcolor1,
+      ),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: list.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
+const List<String> items = <String>[
+  'Select Months',
+  '1 Month',
+  '3 Months',
+  '6 Months',
+  '12 Months',
+];
+
+//sample of web site
+class MyCartWebsite extends StatelessWidget {
+  const MyCartWebsite({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //Differenciate the widget....
+
+    Widget _title_subtitle = Column(
+      children: const [
+        Text(
+          "Shop Name",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
-
-        //elevation: 16,
-        style: const TextStyle(color: WebColors.bgcolor1, fontSize: 15),
-        underline: Container(
-          height: null,
-          //color: WebColors.bgcolor1,
+        SizedBox(height: 5),
+        Text(
+          "Product Name",
+          style: TextStyle(
+            fontSize: 15,
+            //fontWeight: FontWeight.bold,
+            color: Colors.black87,
+          ),
         ),
-        onChanged: (String? value) {
-          // This is called when the user selects an item.
-          setState(() {
-            dropdownValue = value!;
-          });
+      ],
+    );
+
+    //Next....
+    // Widget _subTitle = const Center(
+    //   child: Text(
+    //     "Product Name",
+    //     style: TextStyle(
+    //       fontSize: 15,
+    //       fontWeight: FontWeight.bold,
+    //     ),
+    //   ),
+    // );
+
+    //Next btn..
+    Widget _payBtn = Padding(
+      padding: const EdgeInsets.only(right: 25.0),
+      child: MaterialButton(
+        minWidth: 120,
+        height: 35,
+        textColor: Colors.white,
+        color: WebColors.bgcolor1,
+        splashColor: Colors.amberAccent,
+        hoverColor: Colors.green,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(50.0),
+          ),
+        ),
+        onPressed: () {
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => Webpayment(),
+          //   ),
+          // );
         },
-        items: list.map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
+        child: const Text(
+          "PAYMENT",
+        ),
+      ),
+    );
+
+    return Material(
+      //color: Colors.amber.shade100,
+      child: ListView.builder(
+        itemCount: 15,
+        itemBuilder: (context, index) {
+          return Card(
+            margin: const EdgeInsets.only(left: 150, right: 150, top: 15),
+            child: ListTile(
+              //title: _subTitle,
+              contentPadding:
+                  const EdgeInsets.only(top: 5, left: 25, bottom: 0),
+              subtitle: const Center(child: DropdownButtonMonths()),
+              trailing: _payBtn,
+              leading: _title_subtitle,
+            ),
           );
-        }).toList(),
+        },
       ),
     );
   }

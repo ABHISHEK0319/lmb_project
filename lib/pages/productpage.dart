@@ -81,38 +81,38 @@ class Responsive_Com_Serv extends StatelessWidget {
                     //   ),
                     // ),
                     const SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            'When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts. When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts.',
-                            textStyle: const TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                            speed: const Duration(milliseconds: 80),
-                          ),
-                        ],
-                        totalRepeatCount: 4,
-                        pause: const Duration(milliseconds: 1000),
-                        displayFullTextOnTap: true,
-                        stopPauseOnTap: true,
-                      ),
-                    ),
-
-                    //const SizedBox(height: 30),
-                    // const Center(
-                    //   child: Padding(
-                    //     padding: EdgeInsets.only(left: 50, right: 50),
-                    //     child: Text(
-                    //       'When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts. When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts.',
-                    //       style: TextStyle(color: Colors.black, fontSize: 15),
-                    //       textAlign: TextAlign.justify,
-                    //     ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 50, right: 50),
+                    //   child: AnimatedTextKit(
+                    //     animatedTexts: [
+                    //       TypewriterAnimatedText(
+                    //         'When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts. When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts.',
+                    //         textStyle: const TextStyle(
+                    //           fontSize: 18.0,
+                    //           fontWeight: FontWeight.bold,
+                    //         ),
+                    //         textAlign: TextAlign.center,
+                    //         speed: const Duration(milliseconds: 80),
+                    //       ),
+                    //     ],
+                    //     totalRepeatCount: 4,
+                    //     pause: const Duration(milliseconds: 1000),
+                    //     displayFullTextOnTap: true,
+                    //     stopPauseOnTap: true,
                     //   ),
                     // ),
+
+                    // const SizedBox(height: 30),
+                    const Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 50, right: 50),
+                        child: Text(
+                          'When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts. When it comes to creating a professional looking website, it’s important to not only consider the colors and images you use, but also the fonts.',
+                          style: TextStyle(color: Colors.black, fontSize: 15),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 40),
 
                     // Card Start
@@ -177,15 +177,33 @@ class Responsive_Com_Serv extends StatelessWidget {
                                   color: WebColors.bgcolor1,
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                child: const ElevatedButton(
-                                  onPressed: null,
-                                  child: Text(
-                                    "Download",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                    textAlign: TextAlign.center,
+                                child: AnimatedButton(
+                                  height: 30,
+                                  width: 120,
+                                  text: 'Download',
+                                  isReverse: true,
+                                  selectedTextColor: WebColors.bgcolor1,
+                                  transitionType: TransitionType.LEFT_TO_RIGHT,
+                                  textStyle: GoogleFonts.kanit(
+                                    textStyle: const TextStyle(
+                                        fontSize: 16, color: Colors.white),
                                   ),
+                                  backgroundColor: WebColors.bgcolor1,
+                                  borderColor: Colors.white,
+                                  borderRadius: 5,
+                                  borderWidth: 2,
+                                  onPress: () {},
                                 ),
+
+                                // const ElevatedButton(
+                                //   onPressed: null,
+                                //   child: Text(
+                                //     "Download",
+                                //     style: TextStyle(
+                                //         color: Colors.white, fontSize: 15),
+                                //     textAlign: TextAlign.center,
+                                //   ),
+                                // ),
                               ),
                             ],
                           ),
@@ -223,15 +241,32 @@ class Responsive_Com_Serv extends StatelessWidget {
                                   color: WebColors.bgcolor1,
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                child: const ElevatedButton(
-                                  onPressed: null,
-                                  child: Text(
-                                    "Download",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                    textAlign: TextAlign.center,
+                                child: AnimatedButton(
+                                  height: 30,
+                                  width: 120,
+                                  text: 'Download',
+                                  isReverse: true,
+                                  selectedTextColor: WebColors.bgcolor1,
+                                  transitionType: TransitionType.LEFT_TO_RIGHT,
+                                  textStyle: GoogleFonts.kanit(
+                                    textStyle: const TextStyle(
+                                        fontSize: 16, color: Colors.white),
                                   ),
+                                  backgroundColor: WebColors.bgcolor1,
+                                  borderColor: Colors.white,
+                                  borderRadius: 5,
+                                  borderWidth: 2,
+                                  onPress: () {},
                                 ),
+                                // const ElevatedButton(
+                                //   onPressed: null,
+                                //   child: Text(
+                                //     "Download",
+                                //     style: TextStyle(
+                                //         color: Colors.white, fontSize: 15),
+                                //     textAlign: TextAlign.center,
+                                //   ),
+                                // ),
                               ),
                             ],
                           ),
@@ -250,15 +285,33 @@ class Responsive_Com_Serv extends StatelessWidget {
                                   color: WebColors.bgcolor1,
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                child: const ElevatedButton(
-                                  onPressed: null,
-                                  child: Text(
-                                    "Download",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                    textAlign: TextAlign.center,
+                                child: AnimatedButton(
+                                  height: 30,
+                                  width: 120,
+                                  text: 'Download',
+                                  isReverse: true,
+                                  selectedTextColor: WebColors.bgcolor1,
+                                  transitionType: TransitionType.LEFT_TO_RIGHT,
+                                  textStyle: GoogleFonts.kanit(
+                                    textStyle: const TextStyle(
+                                        fontSize: 16, color: Colors.white),
                                   ),
+                                  backgroundColor: WebColors.bgcolor1,
+                                  borderColor: Colors.white,
+                                  borderRadius: 5,
+                                  borderWidth: 2,
+                                  onPress: () {},
                                 ),
+
+                                // const ElevatedButton(
+                                //   onPressed: null,
+                                //   child: Text(
+                                //     "Download",
+                                //     style: TextStyle(
+                                //         color: Colors.white, fontSize: 15),
+                                //     textAlign: TextAlign.center,
+                                //   ),
+                                // ),
                               ),
                             ],
                           ),

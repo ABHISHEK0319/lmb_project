@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/pages/home.dart';
-import 'package:lmb_project/pages/Logedin.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 void main() {
@@ -18,10 +17,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: WebColors.bgcolor1,
         ),
-        home:
-            //const MyCartBody());
-            //MyInteractiveViewerSample());
-            const SampleLogedinPage());
+        home: const Home());
   }
 }
 

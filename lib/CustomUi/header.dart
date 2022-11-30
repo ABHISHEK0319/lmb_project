@@ -5,6 +5,7 @@ import 'package:lmb_project/pages/contact_us.dart';
 import 'package:lmb_project/pages/home.dart';
 import 'package:lmb_project/pages/productpage.dart';
 import '../pages/login_page.dart';
+import 'login_changes_icons.dart';
 import 'menu_item.dart';
 
 class Header extends StatelessWidget {
@@ -68,31 +69,32 @@ class Header extends StatelessWidget {
                     );
                   },
                 ),
-                Container(
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(208, 219, 255, 59),
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: const [
-                        BoxShadow(
-                          blurRadius: 10,
-                          spreadRadius: 3,
-                          color: WebColors.bgcolor2,
-                        ),
-                      ]),
-                  child: NavItem(
-                    title: 'Login',
-                    tapEvent: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginPage(),
-                        ),
-                        ModalRoute.withName("/"),
-                      );
-                    },
-                  ),
-                ),
+                MyConditionWidget2()
+                // Container(
+                //   padding: const EdgeInsets.all(5),
+                //   decoration: BoxDecoration(
+                //       color: const Color.fromARGB(208, 219, 255, 59),
+                //       borderRadius: BorderRadius.circular(10),
+                //       boxShadow: const [
+                //         BoxShadow(
+                //           blurRadius: 10,
+                //           spreadRadius: 3,
+                //           color: WebColors.bgcolor2,
+                //         ),
+                //       ]),
+                //   child: NavItem(
+                //     title: 'Login',
+                //     tapEvent: () {
+                //       Navigator.pushAndRemoveUntil(
+                //         context,
+                //         MaterialPageRoute(
+                //           builder: (context) => const LoginPage(),
+                //         ),
+                //         ModalRoute.withName("/"),
+                //       );
+                //     },
+                //   ),
+                // ),
               ],
             ),
           if (isMobile(context))
@@ -101,9 +103,13 @@ class Header extends StatelessWidget {
               child: IconButton(
                   icon: const Icon(Icons.menu),
                   onPressed: () {
+                    // setState(context) {
+                    //   Scaffold.of(context).openEndDrawer();
+                    // }
+                    //ScaffoldState( Scaffold.of(context).openEndDrawer(););
                     Scaffold.of(context).openEndDrawer();
                   }),
-            )
+            ),
         ],
       ),
     );
