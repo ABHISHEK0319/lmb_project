@@ -57,7 +57,7 @@ class MyCartBody extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PaymentGateway(),
+                  builder: (context) => const PaymentGateway(),
                 ),
               );
             },

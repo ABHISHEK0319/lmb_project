@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:lmb_project/CustomUi/header.dart';
+import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 import 'package:lmb_project/pages/login_page.dart';
 import '../CustomUi/main_button.dart';
 import '../CustomUi/responsive.dart';
@@ -127,10 +128,12 @@ class ResponsiveRegistrationPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // const SizedBox(width: 10),
-                                MainButton(
-                                  title: 'Sign Up',
-                                  color: WebColors.bgcolor1,
-                                  tapEvent: () {},
+                                OnHoverButton(
+                                  child: MainButton(
+                                    title: 'Sign Up',
+                                    color: WebColors.bgcolor1,
+                                    tapEvent: () {},
+                                  ),
                                 ),
                               ],
                             ),

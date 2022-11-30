@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:lmb_project/CustomUi/header.dart';
+import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 import 'package:lmb_project/pages/tab_logedin_page.dart';
 import 'package:lmb_project/pages/registration_page.dart';
 
@@ -104,13 +105,16 @@ class ResponsiveLoginPage extends StatelessWidget {
                             const SizedBox(height: 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              children: const [
-                                Text(
-                                  'Forget Password!',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12,
-                                    color: WebColors.bgcolor1,
+                              children: [
+                                InkWell(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'Forget Password!',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: WebColors.bgcolor1,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -119,18 +123,20 @@ class ResponsiveLoginPage extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                MainButton(
-                                  title: 'Sign In',
-                                  color: WebColors.bgcolor1,
-                                  tapEvent: () {
-                                    Navigator.pushAndRemoveUntil(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const LogedinPage(),
-                                        ),
-                                        (route) => true);
-                                  },
+                                OnHoverButton(
+                                  child: MainButton(
+                                    title: 'Sign In',
+                                    color: WebColors.bgcolor1,
+                                    tapEvent: () {
+                                      Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const LogedinPage(),
+                                          ),
+                                          (route) => true);
+                                    },
+                                  ),
                                 ),
                               ],
                             ),

@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 import 'package:lmb_project/CustomUi/responsive.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -117,9 +118,11 @@ class home_page1 extends StatelessWidget {
           )),
           if (isDesktop(context) || isTab(context))
             Expanded(
-              child: Image.asset(
-                'assets/images/technology1.png',
-                height: size.height * 0.7,
+              child: OnHoverButton(
+                child: Image.asset(
+                  'assets/images/technology1.png',
+                  height: size.height * 0.7,
+                ),
               ),
             )
         ],

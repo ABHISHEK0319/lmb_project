@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
+import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../models/cartModel.dart';
@@ -352,28 +353,30 @@ class MyCartWebsite extends StatelessWidget {
     //Next btn..
     Widget _payBtn = Padding(
       padding: const EdgeInsets.only(right: 25.0),
-      child: MaterialButton(
-        minWidth: 120,
-        height: 35,
-        textColor: Colors.white,
-        color: WebColors.bgcolor1,
-        splashColor: Colors.amberAccent,
-        hoverColor: Colors.green,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(50.0),
+      child: OnHoverButton(
+        child: MaterialButton(
+          minWidth: 120,
+          height: 35,
+          textColor: Colors.white,
+          color: WebColors.bgcolor1,
+          splashColor: Colors.amberAccent,
+          hoverColor: Colors.green,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(50.0),
+            ),
           ),
-        ),
-        onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => Webpayment(),
-          //   ),
-          // );
-        },
-        child: const Text(
-          "PAYMENT",
+          onPressed: () {
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => Webpayment(),
+            //   ),
+            // );
+          },
+          child: const Text(
+            "PAYMENT",
+          ),
         ),
       ),
     );

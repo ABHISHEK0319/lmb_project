@@ -275,7 +275,7 @@ class NavItem extends StatelessWidget {
       hoverColor: Colors.transparent,
       child: Text(
         title,
-        style: const TextStyle(color: Colors.white, fontSize: 15),
+        style: const TextStyle(color: Colors.black, fontSize: 15),
       ),
     );
   }

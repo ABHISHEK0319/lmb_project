@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
+import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 import 'package:lmb_project/CustomUi/responsive.dart';
 import 'package:lmb_project/pages/contact_us.dart';
 import 'package:lmb_project/pages/home.dart';
@@ -35,39 +36,45 @@ class Header extends StatelessWidget {
           if (!isMobile(context))
             Row(
               children: [
-                NavItem(
-                  title: 'Home',
-                  tapEvent: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                      ModalRoute.withName("/"),
-                    );
-                  },
+                OnHoverButton(
+                  child: NavItem(
+                    title: 'Home',
+                    tapEvent: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                        ModalRoute.withName("/"),
+                      );
+                    },
+                  ),
                 ),
-                NavItem(
-                  title: 'Products',
-                  tapEvent: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ProductPage()),
-                      ModalRoute.withName("/"),
-                    );
-                  },
+                OnHoverButton(
+                  child: NavItem(
+                    title: 'Products',
+                    tapEvent: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProductPage()),
+                        ModalRoute.withName("/"),
+                      );
+                    },
+                  ),
                 ),
-                NavItem(
-                  title: 'Contact Us',
-                  tapEvent: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ContactUs()),
-                      ModalRoute.withName("/"),
-                    );
-                  },
+                OnHoverButton(
+                  child: NavItem(
+                    title: 'Contact Us',
+                    tapEvent: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ContactUs()),
+                        ModalRoute.withName("/"),
+                      );
+                    },
+                  ),
                 ),
                 MyConditionWidget2()
                 // Container(
@@ -103,10 +110,6 @@ class Header extends StatelessWidget {
               child: IconButton(
                   icon: const Icon(Icons.menu),
                   onPressed: () {
-                    // setState(context) {
-                    //   Scaffold.of(context).openEndDrawer();
-                    // }
-                    //ScaffoldState( Scaffold.of(context).openEndDrawer(););
                     Scaffold.of(context).openEndDrawer();
                   }),
             ),

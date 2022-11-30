@@ -24,13 +24,14 @@ class _LogedinPageState extends State<LogedinPage> {
             //collapsedHeight: 100,
             flexibleSpace: Header(),
             pinned: true,
-            snap: true,
-            floating: true,
+            //snap: true,
+            //floating: true,
           ),
 
           // sliver items
           SliverToBoxAdapter(
             child: ClipRRect(
+              clipBehavior: Clip.antiAlias,
               borderRadius: BorderRadius.zero,
               child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.9,

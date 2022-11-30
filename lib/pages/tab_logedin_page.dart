@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
+import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 import 'package:lmb_project/pages/faq.dart';
 import 'package:lmb_project/pages/logout_dialog.dart';
 import 'package:lmb_project/pages/mycartbody.dart';
@@ -33,25 +34,35 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
                 labelStyle: TextStyle(fontWeight: FontWeight.w200),
                 indicator: BoxDecoration(color: WebColors.bgcolor1),
                 tabs: [
-                  Tab(
-                    icon: Icon(Icons.dashboard),
-                    //text: "DASHBOARD",
+                  OnHoverButton(
+                    child: Tab(
+                      icon: Icon(Icons.dashboard),
+                      //text: "DASHBOARD",
+                    ),
                   ),
-                  Tab(
-                    icon: Icon(Icons.shopping_bag),
-                    //text: "ORDER",
+                  OnHoverButton(
+                    child: Tab(
+                      icon: Icon(Icons.shopping_bag),
+                      //text: "ORDER",
+                    ),
                   ),
-                  Tab(
-                    icon: Icon(Icons.question_answer),
-                    // text: "FAQ",
+                  OnHoverButton(
+                    child: Tab(
+                      icon: Icon(Icons.question_answer),
+                      // text: "FAQ",
+                    ),
                   ),
-                  Tab(
-                    icon: Icon(Icons.shopping_cart_checkout_outlined),
-                    // text: "FAQ",
+                  OnHoverButton(
+                    child: Tab(
+                      icon: Icon(Icons.shopping_cart_checkout_outlined),
+                      // text: "FAQ",
+                    ),
                   ),
-                  Tab(
-                    icon: Icon(Icons.logout),
-                    //text: "LOGOUT",
+                  OnHoverButton(
+                    child: Tab(
+                      icon: Icon(Icons.logout),
+                      //text: "LOGOUT",
+                    ),
                   ),
                 ]),
             Expanded(

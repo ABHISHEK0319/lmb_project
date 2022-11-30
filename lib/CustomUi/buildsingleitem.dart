@@ -24,7 +24,7 @@ class BuildSingleItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 200,
+            height: 220,
             width: 250,
             decoration: BoxDecoration(
               color: Colors.white,

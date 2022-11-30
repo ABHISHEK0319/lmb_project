@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 
 class FancyButton extends StatelessWidget {
   final GestureTapCallback onPressed;
@@ -19,14 +20,18 @@ class FancyButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: const <Widget>[
-            Icon(
-              Icons.payment,
-              color: Colors.amber,
+            OnHoverButton(
+              child: Icon(
+                Icons.payment,
+                color: Colors.amber,
+              ),
             ),
             SizedBox(width: 8.0),
-            Text(
-              "Proceed",
-              style: TextStyle(color: Colors.white),
+            OnHoverButton(
+              child: Text(
+                "Proceed",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),
