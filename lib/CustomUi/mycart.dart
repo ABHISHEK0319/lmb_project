@@ -317,6 +317,11 @@ class MyCartWebsite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Differenciate the widget....
+    TextStyle bold24Roboto = const TextStyle(
+      color: Colors.white,
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+    );
 
     Widget _title_subtitle = Column(
       children: const [
@@ -400,5 +405,9 @@ class MyCartWebsite extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Widget containerWidget(BuildContext context) {
+    return Container();
   }
 }

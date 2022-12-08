@@ -54,8 +54,8 @@ class Responsive_Com_Serv extends StatelessWidget {
                       highlightColor: Colors.white,
                       child: DefaultTextStyle(
                         style: GoogleFonts.fredokaOne(
-                          textStyle: const TextStyle(
-                            fontSize: 45.0,
+                          textStyle: TextStyle(
+                            fontSize: isDesktop(context) ? 45 : 25,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),

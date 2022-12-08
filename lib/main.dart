@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'LMB Technology',
         theme: ThemeData(
-          primaryColor: WebColors.bgcolor1,
-        ),
+            primaryColor: WebColors.bgcolor1,
+            backgroundColor: WebColors.bgcolor2),
         home: const Home());
   }
 }

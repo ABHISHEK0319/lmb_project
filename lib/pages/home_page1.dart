@@ -118,13 +118,11 @@ class home_page1 extends StatelessWidget {
           )),
           if (isDesktop(context) || isTab(context))
             Expanded(
-              child: OnHoverButton(
-                child: Image.asset(
-                  'assets/images/technology1.png',
-                  height: size.height * 0.7,
-                ),
+              child: Image.asset(
+                'assets/images/technology1.png',
+                height: size.height * 0.7,
               ),
-            )
+            ),
         ],
       ),
     );

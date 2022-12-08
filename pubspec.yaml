@@ -50,6 +50,8 @@ dependencies:
   flutter_icons_null_safety: ^1.1.0
   avatar_glow: ^2.0.2
   lottie: ^2.0.0
+  sql_conn: ^0.0.3
+  
 
 dev_dependencies:
   flutter_test:

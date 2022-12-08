@@ -4,6 +4,8 @@ import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:lmb_project/CustomUi/header.dart';
 import 'package:lmb_project/CustomUi/onHoverEffect.dart';
 import 'package:lmb_project/pages/login_page.dart';
+import 'package:lmb_project/utils/connection_class.dart';
+import 'package:velocity_x/velocity_x.dart';
 import '../CustomUi/main_button.dart';
 import '../CustomUi/responsive.dart';
 
@@ -13,16 +15,24 @@ class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (!isMobile(context))
-        ? const ResponsiveRegistrationPage()
-        : const ResponsiveRegistrationPage();
+        ? ResponsiveRegistrationPage()
+        : ResponsiveRegistrationPage();
   }
 }
 
 class ResponsiveRegistrationPage extends StatelessWidget {
-  const ResponsiveRegistrationPage({Key? key}) : super(key: key);
+  ResponsiveRegistrationPage({
+    Key? key,
+  }) : super(key: key);
 
+  final TextEditingController _controller = TextEditingController();
+  final TextEditingController _controllerContact = TextEditingController();
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPsswd = TextEditingController();
+  final TextEditingController _controllerConfirm = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var textName;
     return Material(
       child: SingleChildScrollView(
         child: Container(
@@ -83,45 +93,53 @@ class ResponsiveRegistrationPage extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                             const SizedBox(height: 20),
-                            const TextField(
-                                decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'Enter User Name',
-                              labelText: 'User Name',
-                            )),
+                            TextField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Enter User Name',
+                                labelText: "User Name",
+                              ),
+                              controller: _controller,
+                            ),
                             const SizedBox(height: 20),
-                            const TextField(
-                                decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'Enter Email',
-                              labelText: 'Email',
-                            )),
+                            TextField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Enter Email',
+                                labelText: 'Email',
+                              ),
+                              controller: _controllerEmail,
+                            ),
                             const SizedBox(height: 20),
-                            const TextField(
-                                decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'Enter Phone Number',
-                              labelText: 'Contact Number',
-                            )),
+                            TextField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Enter Phone Number',
+                                labelText: 'Contact Number',
+                              ),
+                              controller: _controllerContact,
+                            ),
                             const SizedBox(height: 20),
-                            const TextField(
+                            TextField(
                               obscureText: true,
                               obscuringCharacter: "*",
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
                                 hintText: 'Type Password',
                                 labelText: 'Password',
                               ),
+                              controller: _controllerPsswd,
                             ),
                             const SizedBox(height: 20),
-                            const TextField(
+                            TextField(
                               obscureText: true,
                               obscuringCharacter: "*",
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
                                 hintText: 'Re-type Password',
                                 labelText: 'Confirm Password',
                               ),
+                              controller: _controllerConfirm,
                             ),
                             const SizedBox(height: 20),
                             Row(
@@ -132,7 +150,64 @@ class ResponsiveRegistrationPage extends StatelessWidget {
                                   child: MainButton(
                                     title: 'Sign Up',
                                     color: WebColors.bgcolor1,
-                                    tapEvent: () {},
+                                    tapEvent: () {
+                                      String name = _controller.text.toString();
+                                      String email =
+                                          _controllerEmail.text.toString();
+                                      String contact =
+                                          _controllerContact.text.toString();
+                                      String passwd =
+                                          _controllerPsswd.text.toString();
+                                      String confirm =
+                                          _controllerConfirm.text.toString();
+                                      String fname = '', mname = '', lname = '';
+                                      if (name.isNotEmpty) {
+                                        var x = name.split(' ');
+                                        if (x.length == 2) {
+                                          fname = x[0];
+                                          lname = x[1];
+                                        } else {
+                                          fname = x[0];
+                                          lname = x[2];
+                                          mname = x[1];
+                                        }
+
+                                        if (passwd == confirm) {
+                                          if (!ConnectionClass.isConnected) {
+                                            ConnectionClass.conn();
+                                          }
+                                          var result = ConnectionClass.writeData(
+                                              "EXEC sp_GetLogin '', $name, $fname, $mname, $lname, $contact, $email, $passwd, '2' ");
+                                          if (result == 1) {
+                                            AlertDialog(
+                                              title: 'Sucess'.text.make(),
+                                            );
+                                          } else {
+                                            AlertDialog(
+                                              title: 'Fail'.text.make(),
+                                            );
+                                          }
+                                        } else {
+                                          AlertDialog(
+                                            title:
+                                                'Mismatch Password'.text.make(),
+                                          );
+                                        }
+                                      } else {
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) => AlertDialog(
+                                            title: 'Input Error'.text.make(),
+                                          ),
+                                        );
+                                      }
+
+                                      //   if (!ConnectionClass.isConnected) {
+                                      //     ConnectionClass.conn();
+                                      //   }
+                                      //   var result = await ConnectionClass.writeData(
+                                      //       "EXEC sp_GetLogin '', $name, $fname, $mname, $lname, $contact, $email, $passwd, '2' ");
+                                    },
                                   ),
                                 ),
                               ],
