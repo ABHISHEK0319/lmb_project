@@ -40,7 +40,8 @@ class ResponsiveLoginPage extends StatelessWidget {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  const Header(),
+                  //Header(),
+                  const ResponsiveHeaderView(),
                   //const SizedBox(height: 10),
                   const Text(
                     'User Login',
@@ -71,7 +72,7 @@ class ResponsiveLoginPage extends StatelessWidget {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
                       ),
-                      height: 400,
+                      height: 410,
                       width: 400,
                       child: Padding(
                         padding: const EdgeInsets.all(15.0),
@@ -171,7 +172,7 @@ class ResponsiveLoginPage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: 10),
+                                const SizedBox(height: 15),
                               ],
                             )
                           ],
@@ -179,7 +180,7 @@ class ResponsiveLoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 90),
                   const Footer(),
                 ])),
       ),

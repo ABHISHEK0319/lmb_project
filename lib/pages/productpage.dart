@@ -47,7 +47,8 @@ class Responsive_Com_Serv extends StatelessWidget {
                 Expanded(
                     child: Column(
                   children: <Widget>[
-                    const Header(),
+                    // Header(),
+                    const ResponsiveHeaderView(),
                     const SizedBox(height: 30),
                     Shimmer.fromColors(
                       baseColor: Colors.black,

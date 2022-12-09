@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
+import 'package:lmb_project/CustomUi/drawer.dart';
 import 'package:lmb_project/CustomUi/footer.dart';
 import 'package:lmb_project/CustomUi/header.dart';
 import 'package:lmb_project/CustomUi/side_menu.dart';
@@ -9,18 +10,23 @@ import 'package:lmb_project/pages/home_page1.dart';
 import 'package:lmb_project/pages/wedo_new.dart';
 import 'package:lmb_project/pages/whatResInc.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      endDrawer: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 300),
-        child: SideMenu(),
-      ),
+      // endDrawer: ConstrainedBox(
+      //   constraints: const BoxConstraints(maxWidth: 300),
+      //   child: SideMenu(),
+      // ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
@@ -36,7 +42,8 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const <Widget>[
-                Header(),
+                // Header(),
+                ResponsiveHeaderView(),
                 home_page1(),
                 CompanyServices(),
                 WhatIncludedNew(),

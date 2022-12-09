@@ -32,7 +32,6 @@ class ResponsiveRegistrationPage extends StatelessWidget {
   final TextEditingController _controllerConfirm = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    var textName;
     return Material(
       child: SingleChildScrollView(
         child: Container(
@@ -47,7 +46,8 @@ class ResponsiveRegistrationPage extends StatelessWidget {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  const Header(),
+                  //Header(),
+                  const ResponsiveHeaderView(),
                   const SizedBox(height: 10),
                   const Text(
                     'User Registration',

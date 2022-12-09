@@ -16,6 +16,7 @@ class MyConditionWidget2 extends StatelessWidget {
       if (y >= 10) {
         return OnHoverButton(
           child: Container(
+            margin: const EdgeInsets.only(bottom: 5, left: 15),
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
                 color: const Color.fromARGB(208, 219, 255, 59),

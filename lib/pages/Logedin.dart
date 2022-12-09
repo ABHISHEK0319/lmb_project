@@ -2,15 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:lmb_project/CustomUi/custom_color.dart';
 import 'package:lmb_project/CustomUi/header.dart';
 import 'package:lmb_project/pages/tab_logedin_page.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+import '../CustomUi/drawer.dart';
 
 class LogedinPage extends StatefulWidget {
-  const LogedinPage({Key? key}) : super(key: key);
+  const LogedinPage({super.key});
 
   @override
   State<LogedinPage> createState() => _LogedinPageState();
 }
 
 class _LogedinPageState extends State<LogedinPage> {
+  @override
+  Widget build(BuildContext context) {
+    return const VxDevice(
+      mobile: MobileLogedinPage(),
+      web: WebLogedinPage(),
+    );
+  }
+}
+
+class WebLogedinPage extends StatefulWidget {
+  const WebLogedinPage({Key? key}) : super(key: key);
+
+  @override
+  State<WebLogedinPage> createState() => _WebLogedinPageState();
+}
+
+class _WebLogedinPageState extends State<WebLogedinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +40,9 @@ class _LogedinPageState extends State<LogedinPage> {
           const SliverAppBar(
             backgroundColor: WebColors.bgcolor1,
             expandedHeight: 120,
-            flexibleSpace: Header(),
+            flexibleSpace:
+                //Header(),
+                ResponsiveHeaderView(),
             pinned: true,
           ),
 
@@ -36,6 +58,25 @@ class _LogedinPageState extends State<LogedinPage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MobileLogedinPage extends StatefulWidget {
+  const MobileLogedinPage({Key? key}) : super(key: key);
+
+  @override
+  State<MobileLogedinPage> createState() => _MobileLogedinPageState();
+}
+
+class _MobileLogedinPageState extends State<MobileLogedinPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: WebColors.bgcolor1,
+      body: Column(
+        children: const [DrawerPage(), Expanded(child: TabsLogedinPage())],
       ),
     );
   }

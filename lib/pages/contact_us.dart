@@ -31,7 +31,8 @@ class _ContactUsState extends State<ContactUs> {
           )),
           child: Column(
             children: [
-              const Header(),
+              //Header(),
+              const ResponsiveHeaderView(),
               const SizedBox(height: 50),
               Card(
                 color: WebColors.bgcolor2,

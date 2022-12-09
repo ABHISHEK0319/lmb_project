@@ -1,16 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:lmb_project/CustomUi/custom_color.dart';
+import 'package:lmb_project/CustomUi/drawer.dart';
 import 'package:lmb_project/CustomUi/onHoverEffect.dart';
-import 'package:lmb_project/CustomUi/responsive.dart';
 import 'package:lmb_project/pages/contact_us.dart';
 import 'package:lmb_project/pages/home.dart';
 import 'package:lmb_project/pages/productpage.dart';
-import '../pages/login_page.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'login_changes_icons.dart';
 import 'menu_item.dart';
 
+class ResponsiveHeaderView extends StatefulWidget {
+  const ResponsiveHeaderView({super.key});
+
+  @override
+  State<ResponsiveHeaderView> createState() => _ResponsiveHeaderViewState();
+}
+
+class _ResponsiveHeaderViewState extends State<ResponsiveHeaderView> {
+  @override
+  Widget build(BuildContext context) {
+    return VxDevice(
+      mobile: const DrawerPage(),
+      web: Header(),
+    );
+  }
+}
+
 class Header extends StatelessWidget {
-  const Header({
+  Header({
     Key? key,
   }) : super(key: key);
 
@@ -33,86 +49,63 @@ class Header extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          if (!isMobile(context))
-            Row(
-              children: [
-                OnHoverButton(
-                  child: NavItem(
-                    title: 'Home',
-                    tapEvent: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                        ModalRoute.withName("/"),
-                      );
-                    },
-                  ),
+          //if (!isMobile(context))
+          Row(
+            children: [
+              OnHoverButton(
+                child: NavItem(
+                  title: 'Home',
+                  tapEvent: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                      ModalRoute.withName("/"),
+                    );
+                  },
                 ),
-                OnHoverButton(
-                  child: NavItem(
-                    title: 'Products',
-                    tapEvent: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProductPage()),
-                        ModalRoute.withName("/"),
-                      );
-                    },
-                  ),
+              ),
+              OnHoverButton(
+                child: NavItem(
+                  title: 'Products',
+                  tapEvent: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProductPage()),
+                      ModalRoute.withName("/"),
+                    );
+                  },
                 ),
-                OnHoverButton(
-                  child: NavItem(
-                    title: 'Contact Us',
-                    tapEvent: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ContactUs()),
-                        ModalRoute.withName("/"),
-                      );
-                    },
-                  ),
+              ),
+              OnHoverButton(
+                child: NavItem(
+                  title: 'Contact Us',
+                  tapEvent: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ContactUs()),
+                      ModalRoute.withName("/"),
+                    );
+                  },
                 ),
-                MyConditionWidget2()
-                // Container(
-                //   padding: const EdgeInsets.all(5),
-                //   decoration: BoxDecoration(
-                //       color: const Color.fromARGB(208, 219, 255, 59),
-                //       borderRadius: BorderRadius.circular(10),
-                //       boxShadow: const [
-                //         BoxShadow(
-                //           blurRadius: 10,
-                //           spreadRadius: 3,
-                //           color: WebColors.bgcolor2,
-                //         ),
-                //       ]),
-                //   child: NavItem(
-                //     title: 'Login',
-                //     tapEvent: () {
-                //       Navigator.pushAndRemoveUntil(
-                //         context,
-                //         MaterialPageRoute(
-                //           builder: (context) => const LoginPage(),
-                //         ),
-                //         ModalRoute.withName("/"),
-                //       );
-                //     },
-                //   ),
-                // ),
-              ],
-            ),
-          if (isMobile(context))
-            Padding(
-              padding: const EdgeInsets.only(right: 1),
-              child: IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () {
-                    Scaffold.of(context).openEndDrawer();
-                  }),
-            ),
+              ),
+              const MyConditionWidget2()
+            ],
+          ),
+          // if (isMobile(context))
+          //   Padding(
+          //     padding: const EdgeInsets.only(right: 1),
+          //     child: Builder(builder: (context) {
+          //       return IconButton(
+          //           icon: const Icon(Icons.menu),
+          //           onPressed: () {
+          //             Scaffold.of(context).openEndDrawer();
+          //           });
+          //     }),
+          //   ),
         ],
       ),
     );

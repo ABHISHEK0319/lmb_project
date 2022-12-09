@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmb_project/CustomUi/custom_color.dart';
 
 class NavItem extends StatelessWidget {
   const NavItem({Key? key, required this.title, required this.tapEvent})
@@ -11,7 +12,7 @@ class NavItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: tapEvent,
-      hoverColor: Colors.white,
+      hoverColor: WebColors.bgcolor1,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Text(

@@ -118,7 +118,7 @@ class MyCartMobile extends StatelessWidget {
                           ),
                           onPressed: () {},
                           child: const Text(
-                            "PAYMENT",
+                            "Amount",
                           ),
                         ),
                       ),
@@ -127,121 +127,6 @@ class MyCartMobile extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MyCartWeb extends StatelessWidget {
-  const MyCartWeb({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: GridView.builder(
-        itemCount: 15,
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 430.0,
-          crossAxisSpacing: 20.0,
-          mainAxisSpacing: 20.0,
-          childAspectRatio: 3,
-          mainAxisExtent: 300,
-        ),
-        itemBuilder: (context, i) => Card(
-          //color: WebColors.bgcolor2,
-          color: Colors.white70,
-          shadowColor: WebColors.bgcolor2,
-
-          child: Column(
-            children: [
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Text(
-                      //cartModel[i].shopName,
-                      "Shop Name",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: const [
-                  Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 30, top: 20, bottom: 30),
-                      child: Text(
-                        // cartModel[i].productName,
-                        "Product Name",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20),
-                    child: SizedBox(
-                      height: 45,
-                      child: Card(
-                        child: DropdownButtonMonths(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 25.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: MaterialButton(
-                        minWidth: 120,
-                        height: 35,
-                        textColor: Colors.white,
-                        color: WebColors.bgcolor1,
-                        splashColor: Colors.amberAccent,
-                        hoverColor: Colors.green,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(50.0),
-                          ),
-                        ),
-                        onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => Webpayment(),
-                          //   ),
-                          // );
-                        },
-                        child: const Text(
-                          "PAYMENT",
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
           ),
         ),
       ),
@@ -316,13 +201,6 @@ class MyCartWebsite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Differenciate the widget....
-    TextStyle bold24Roboto = const TextStyle(
-      color: Colors.white,
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-    );
-
     Widget _title_subtitle = Column(
       children: const [
         Text(
@@ -380,7 +258,7 @@ class MyCartWebsite extends StatelessWidget {
             // );
           },
           child: const Text(
-            "PAYMENT",
+            "Amount",
           ),
         ),
       ),
@@ -405,9 +283,5 @@ class MyCartWebsite extends StatelessWidget {
         },
       ),
     );
-  }
-
-  Widget containerWidget(BuildContext context) {
-    return Container();
   }
 }
