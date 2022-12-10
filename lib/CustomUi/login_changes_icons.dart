@@ -41,6 +41,7 @@ class MyConditionWidget2 extends StatelessWidget {
                     ModalRoute.withName("/"),
                   );
                 },
+                color: Colors.black,
               ),
             ),
           ),

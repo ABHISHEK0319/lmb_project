@@ -60,7 +60,10 @@ class _TabsLogedinPageState extends State<TabsLogedinPage> {
                   ),
                   OnHoverButton(
                     child: Tab(
-                      icon: Icon(Icons.logout),
+                      icon: Icon(
+                        Icons.logout,
+                        color: Colors.red,
+                      ),
                       //text: "LOGOUT",
                     ),
                   ),

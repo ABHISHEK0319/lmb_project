@@ -50,18 +50,22 @@ class DesktopFooter extends StatelessWidget {
                       NavItem(
                         title: 'Twitter',
                         tapEvent: () {},
+                        color: Colors.amber,
                       ),
                       NavItem(
                         title: 'Facebook',
                         tapEvent: () {},
+                        color: Colors.amber,
                       ),
                       NavItem(
                         title: 'Linkedin',
                         tapEvent: () {},
+                        color: Colors.amber,
                       ),
                       NavItem(
                         title: 'Instagram',
                         tapEvent: () {},
+                        color: Colors.amber,
                       ),
                     ],
                   ),
@@ -173,21 +177,25 @@ class MobileFooter extends StatelessWidget {
               NavItem(
                 title: 'Twitter',
                 tapEvent: () {},
+                color: Colors.amber,
               ),
               const SizedBox(height: 10),
               NavItem(
                 title: 'Facebook',
                 tapEvent: () {},
+                color: Colors.amber,
               ),
               const SizedBox(height: 10),
               NavItem(
                 title: 'Linkedin',
                 tapEvent: () {},
+                color: Colors.amber,
               ),
               const SizedBox(height: 10),
               NavItem(
                 title: 'Instagram',
                 tapEvent: () {},
+                color: Colors.amber,
               ),
               const SizedBox(height: 10),
             ],
@@ -262,10 +270,15 @@ class MobileFooter extends StatelessWidget {
 }
 
 class NavItem extends StatelessWidget {
-  const NavItem({Key? key, required this.title, required this.tapEvent})
-      : super(key: key);
+  const NavItem({
+    Key? key,
+    required this.title,
+    required this.tapEvent,
+    this.color,
+  }) : super(key: key);
 
   final String title;
+  final Color? color;
   final GestureTapCallback tapEvent;
 
   @override
@@ -275,7 +288,7 @@ class NavItem extends StatelessWidget {
       hoverColor: Colors.transparent,
       child: Text(
         title,
-        style: const TextStyle(color: Colors.black, fontSize: 15),
+        style: TextStyle(color: color, fontSize: 15),
       ),
     );
   }

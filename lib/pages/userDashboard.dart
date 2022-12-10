@@ -24,7 +24,7 @@ class UserDashboard extends StatelessWidget {
                 ),
               ),
               //MyTabledataContainer(),
-              SizedBox(height: 150),
+              SizedBox(height: 250),
               Footer(),
             ],
           ),
@@ -44,15 +44,33 @@ class MyTabledataContainer extends StatefulWidget {
 class _MyTabledataContainerState extends State<MyTabledataContainer> {
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-        title: const Text("asdfjasdkf"),
-        content: InkWell(
-          onTap: null,
-          child: Container(
-            color: Colors.red,
-          ),
-        ),
-        actions: const [ElevatedButton(onPressed: null, child: Text("Ok"))]);
+    return DataTable(columns: const [
+      DataColumn(label: Text("Date")),
+      DataColumn(label: Text("21-Nov-2022"))
+    ], rows: const [
+      DataRow(cells: [DataCell(Text("Reference No")), DataCell(Text("123"))]),
+      DataRow(
+          cells: [DataCell(Text("Product Name")), DataCell(Text("concrete"))]),
+      DataRow(cells: [
+        DataCell(Text("Site/Shop Name")),
+        DataCell(Text("Indra Nagar"))
+      ]),
+      DataRow(cells: [
+        DataCell(Text("Bill Cycle")),
+        DataCell(Text("22-Nov-2022 to 21-dec-2022"))
+      ]),
+      DataRow(cells: [DataCell(Text("Amount")), DataCell(Text("5000.00"))]),
+      DataRow(cells: [DataCell(Text("Status")), DataCell(Text("Active"))]),
+    ]);
+    //  AlertDialog(
+    //     title: const Text("asdfjasdkf"),
+    //     content: InkWell(
+    //       onTap: null,
+    //       child: Container(
+    //         color: Colors.red,
+    //       ),
+    //     ),
+    //     actions: const [ElevatedButton(onPressed: null, child: Text("Ok"))]);
   }
 }
 
@@ -64,39 +82,70 @@ class MyVxDashboard extends StatefulWidget {
 }
 
 class _MyVxDashboardState extends State<MyVxDashboard> {
+  bool _isVisible = true;
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
+
+  showTable() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.9,
       height: MediaQuery.of(context).size.height * 0.48,
       decoration: const BoxDecoration(),
-      child: InkWell(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: ((context) => const MyTabledataContainer()));
-        },
-        child: List.generate(
-            10,
-            (index) => "Item $index"
-                .text
-                .size(44)
-                .white
-                .make()
-                .box
-                .rounded
-                .alignCenter
-                .color(Vx.randomOpaqueColor)
-                .make()
-                .p32()).swiper(
-            height: context.isMobile ? 300 : 600,
-            enlargeCenterPage: true,
-            onPageChanged: (index) {
-              print(index);
-            },
-            isFastScrollingEnabled: true,
-            scrollDirection:
-                context.isMobile ? Axis.horizontal : Axis.horizontal),
+      child: Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: SizedBox(
+              height: 200,
+              child: InkWell(
+                onTap: showTable,
+                child: List.generate(
+                    10,
+                    (index) => "Item $index"
+                        .text
+                        .size(44)
+                        .white
+                        .make()
+                        .box
+                        .rounded
+                        .alignCenter
+                        .color(Vx.randomOpaqueColor)
+                        .make()
+                        .p32()).swiper(
+                    height: context.isMobile ? 300 : 600,
+                    enlargeCenterPage: true,
+                    onPageChanged: (index) {
+                      print(index);
+                    },
+                    isFastScrollingEnabled: true,
+                    scrollDirection:
+                        context.isMobile ? Axis.horizontal : Axis.horizontal),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Expanded(
+            child: Visibility(
+              visible: _isVisible,
+              child: const MyTabledataContainer(),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
       ),
     );
   }
