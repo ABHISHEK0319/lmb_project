@@ -5,6 +5,7 @@ import '../CustomUi/footer.dart';
 import '../pages/Logedin.dart';
 import '../pages/login_page.dart';
 import 'custom_color.dart';
+import 'navitem.dart';
 
 class MyConditionWidget2 extends StatelessWidget {
   const MyConditionWidget2({super.key});

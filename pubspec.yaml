@@ -51,6 +51,7 @@ dependencies:
   avatar_glow: ^2.0.2
   lottie: ^2.0.0
   sql_conn: ^0.0.3
+  url_launcher: ^6.1.7
   
 
 dev_dependencies:

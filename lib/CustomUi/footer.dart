@@ -1,24 +1,36 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:lmb_project/CustomUi/responsive.dart';
+import 'package:url_launcher/link.dart';
 import 'custom_color.dart';
 
-class Footer extends StatelessWidget {
+class Footer extends StatefulWidget {
   const Footer({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<Footer> createState() => _FooterState();
+}
+
+class _FooterState extends State<Footer> {
   @override
   Widget build(BuildContext context) {
     return (!isMobile(context)) ? const DesktopFooter() : const MobileFooter();
   }
 }
 
-class DesktopFooter extends StatelessWidget {
+class DesktopFooter extends StatefulWidget {
   const DesktopFooter({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<DesktopFooter> createState() => _DesktopFooterState();
+}
+
+class _DesktopFooterState extends State<DesktopFooter> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,104 +59,85 @@ class DesktopFooter extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      NavItem(
-                        title: 'Twitter',
-                        tapEvent: () {},
-                        color: Colors.amber,
-                      ),
-                      NavItem(
-                        title: 'Facebook',
-                        tapEvent: () {},
-                        color: Colors.amber,
-                      ),
-                      NavItem(
-                        title: 'Linkedin',
-                        tapEvent: () {},
-                        color: Colors.amber,
-                      ),
-                      NavItem(
-                        title: 'Instagram',
-                        tapEvent: () {},
-                        color: Colors.amber,
-                      ),
+                      // RichText(
+                      //   text: TextSpan(children: [
+                      //   TextSpan(
+                      //       style: TextStyle(color: Colors.greenAccent),
+                      //       text: "Click here",
+                      //       recognizer: TapGestureRecognizer()
+                      //         ..onTap = () async {
+                      //           var url =
+                      //               "https://www.youtube.com/channel/UCwxiHP2Ryd-aR0SWKjYguxw?view_as=subscriber";
+                      //           if (await canLaunch(url)) {
+                      //             await launch(url);
+                      //           } else {
+                      //             throw 'Could not launch $url';
+                      //           }
+                      //         }),
+                      // ])),
+
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse('https://twitter.com/'),
+                          builder: (context, followLink) => TextButton(
+                                onPressed: followLink,
+                                child: const Text(
+                                  'Twitter',
+                                  style: TextStyle(color: Colors.amber),
+                                ),
+                              )),
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(
+                              'https://www.facebook.com/amzonshoping.NK/'),
+                          builder: (context, followLink) => TextButton(
+                                onPressed: followLink,
+                                child: const Text(
+                                  'Facebook',
+                                  style: TextStyle(color: Colors.amber),
+                                ),
+                              )),
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse('https://in.linkedin.com/'),
+                          builder: (context, followLink) => TextButton(
+                                onPressed: followLink,
+                                child: const Text(
+                                  'Linkedin',
+                                  style: TextStyle(color: Colors.amber),
+                                ),
+                              )),
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse('https://www.instagram.com/'),
+                          builder: (context, followLink) => TextButton(
+                                onPressed: followLink,
+                                child: const Text(
+                                  'Instagram',
+                                  style: TextStyle(color: Colors.amber),
+                                ),
+                              )),
                     ],
                   ),
                   const SizedBox(height: 20)
                 ],
               )),
-
-          // Expanded(
-          //   child: Container(
-          //     child: Padding(
-          //       padding: const EdgeInsets.only(right: 10),
-          //       child: Column(
-          //         crossAxisAlignment: CrossAxisAlignment.center,
-          //         children: [
-          //           const SizedBox(height: 10),
-          //           const TextField(
-          //               maxLines: 1,
-          //               decoration: InputDecoration(
-          //                   icon: Icon(Icons.email, color: WebColors.txtcolor),
-          //                   // border: OutlineInputBorder(),
-          //                   hintText: 'you@example.com',
-          //                   hintStyle: TextStyle(
-          //                       color: Color.fromARGB(44, 255, 255, 255),
-          //                       fontSize: 15),
-          //                   labelText: 'E-mail Address',
-          //                   labelStyle: TextStyle(
-          //                       color: WebColors.txtcolor, fontSize: 15))),
-          //           const SizedBox(height: 10),
-          //           const TextField(
-          //               maxLines: 1,
-          //               decoration: InputDecoration(
-          //                   icon: Icon(Icons.person, color: WebColors.txtcolor),
-          //                   // border: OutlineInputBorder(),
-          //                   hintText: 'Name',
-          //                   hintStyle: TextStyle(
-          //                       color: Color.fromARGB(44, 255, 255, 255),
-          //                       fontSize: 15),
-          //                   labelText: 'Name',
-          //                   labelStyle: TextStyle(
-          //                       color: WebColors.txtcolor, fontSize: 15))),
-          //           const SizedBox(height: 10),
-          //           const TextField(
-          //               maxLines: 1,
-          //               decoration: InputDecoration(
-          //                   icon:
-          //                       Icon(Icons.message, color: WebColors.txtcolor),
-          //                   // border: OutlineInputBorder(),
-          //                   hintText: 'Message',
-          //                   hintStyle: TextStyle(
-          //                       color: Color.fromARGB(44, 255, 255, 255),
-          //                       fontSize: 15),
-          //                   labelText: 'Message',
-          //                   labelStyle: TextStyle(
-          //                       color: WebColors.txtcolor, fontSize: 15))),
-          //           const SizedBox(height: 10),
-          //           MainButton(
-          //             title: 'Submit',
-          //             color: WebColors.bgcolor1,
-          //             tapEvent: () {},
-          //           ),
-          //           const SizedBox(
-          //             height: 10,
-          //           )
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );
   }
 }
 
-class MobileFooter extends StatelessWidget {
+class MobileFooter extends StatefulWidget {
   const MobileFooter({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<MobileFooter> createState() => _MobileFooterState();
+}
+
+class _MobileFooterState extends State<MobileFooter> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -174,29 +167,49 @@ class MobileFooter extends StatelessWidget {
                 color: Colors.white,
               ),
               const SizedBox(height: 10),
-              NavItem(
-                title: 'Twitter',
-                tapEvent: () {},
-                color: Colors.amber,
-              ),
+              Link(
+                  target: LinkTarget.blank,
+                  uri: Uri.parse('https://twitter.com/'),
+                  builder: (context, followLink) => TextButton(
+                        onPressed: followLink,
+                        child: const Text(
+                          'Twitter',
+                          style: TextStyle(color: Colors.amber),
+                        ),
+                      )),
               const SizedBox(height: 10),
-              NavItem(
-                title: 'Facebook',
-                tapEvent: () {},
-                color: Colors.amber,
-              ),
+              Link(
+                  target: LinkTarget.blank,
+                  uri: Uri.parse('https://www.facebook.com/'),
+                  builder: (context, followLink) => TextButton(
+                        onPressed: followLink,
+                        child: const Text(
+                          'Facebook',
+                          style: TextStyle(color: Colors.amber),
+                        ),
+                      )),
               const SizedBox(height: 10),
-              NavItem(
-                title: 'Linkedin',
-                tapEvent: () {},
-                color: Colors.amber,
-              ),
+              Link(
+                  target: LinkTarget.blank,
+                  uri: Uri.parse('https://in.linkedin.com/'),
+                  builder: (context, followLink) => TextButton(
+                        onPressed: followLink,
+                        child: const Text(
+                          'Linkdin',
+                          style: TextStyle(color: Colors.amber),
+                        ),
+                      )),
               const SizedBox(height: 10),
-              NavItem(
-                title: 'Instagram',
-                tapEvent: () {},
-                color: Colors.amber,
-              ),
+              Link(
+                  target: LinkTarget.blank,
+                  uri: Uri.parse('https://www.instagram.com/'),
+                  builder: (context, followLink) => TextButton(
+                        onPressed: followLink,
+                        child: const Text(
+                          'Instagram',
+                          style: TextStyle(color: Colors.amber),
+                        ),
+                      )),
               const SizedBox(height: 10),
             ],
           ),
@@ -204,91 +217,7 @@ class MobileFooter extends StatelessWidget {
             color: Colors.white,
           ),
           const SizedBox(height: 10),
-          // Padding(
-          //   padding: const EdgeInsets.all(10.0),
-          //   child: Wrap(
-          //     alignment: WrapAlignment.center,
-          //     children: [
-          //       const Padding(
-          //         padding: EdgeInsets.only(bottom: 10),
-          //         child: TextField(
-          //             maxLines: 1,
-          //             decoration: InputDecoration(
-          //                 icon: Icon(Icons.email, color: WebColors.txtcolor),
-          //                 // border: OutlineInputBorder(),
-          //                 hintText: 'you@example.com',
-          //                 hintStyle: TextStyle(
-          //                     color: Color.fromARGB(44, 255, 255, 255),
-          //                     fontSize: 15),
-          //                 labelText: 'E-mail Address',
-          //                 labelStyle: TextStyle(
-          //                     color: WebColors.txtcolor, fontSize: 12))),
-          //       ),
-          //       const Padding(
-          //         padding: EdgeInsets.only(bottom: 10),
-          //         child: TextField(
-          //             maxLines: 1,
-          //             decoration: InputDecoration(
-          //                 icon: Icon(Icons.person, color: WebColors.txtcolor),
-          //                 // border: OutlineInputBorder(),
-          //                 hintText: 'Name',
-          //                 hintStyle: TextStyle(
-          //                     color: Color.fromARGB(44, 255, 255, 255),
-          //                     fontSize: 15),
-          //                 labelText: 'Name',
-          //                 labelStyle: TextStyle(
-          //                     color: WebColors.txtcolor, fontSize: 12))),
-          //       ),
-          //       const Padding(
-          //         padding: EdgeInsets.only(bottom: 10),
-          //         child: TextField(
-          //             maxLines: 1,
-          //             decoration: InputDecoration(
-          //                 icon: Icon(Icons.message, color: WebColors.txtcolor),
-          //                 // border: OutlineInputBorder(),
-          //                 hintText: 'Message',
-          //                 hintStyle: TextStyle(
-          //                     color: Color.fromARGB(44, 255, 255, 255),
-          //                     fontSize: 15),
-          //                 labelText: 'Message',
-          //                 labelStyle: TextStyle(
-          //                     color: WebColors.txtcolor, fontSize: 12))),
-          //       ),
-          //       const SizedBox(height: 10),
-          //       MainButton(
-          //         title: 'Submit',
-          //         color: WebColors.bgcolor1,
-          //         tapEvent: () {},
-          //       )
-          //     ],
-          //   ),
-          // ),
         ],
-      ),
-    );
-  }
-}
-
-class NavItem extends StatelessWidget {
-  const NavItem({
-    Key? key,
-    required this.title,
-    required this.tapEvent,
-    this.color,
-  }) : super(key: key);
-
-  final String title;
-  final Color? color;
-  final GestureTapCallback tapEvent;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: tapEvent,
-      hoverColor: Colors.transparent,
-      child: Text(
-        title,
-        style: TextStyle(color: color, fontSize: 15),
       ),
     );
   }
